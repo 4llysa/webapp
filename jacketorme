@@ -1,0 +1,3 @@
+mystr=input()
+for i in mystr: 
+    print(i)

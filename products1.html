@@ -1,0 +1,76 @@
+<head>
+    <style>
+        .box{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .navibar{
+            width:100%;
+            background-color: mediumspringgreen;
+            display: flex;
+            justify-content: center;
+        }
+        .panel{
+            background-color:deepskyblue;
+            width: 40%;
+            margin: 1px 3px;
+            text-align: center;
+            font-family: monospace;
+        }
+        .text_title{
+            background-color: blueviolet;
+            font-size: large;
+        }
+        .text{
+            background-color: darkorange;
+        }
+        .text_price{
+            background-color: deeppink;
+        }
+        img{
+            width: 30%;
+            margin: 2%;
+        }
+    </style>
+</head>
+<body>
+<div class="navibar">
+    <div class="redirect">
+        <form action="/form">
+            <button type="submit">Add product</button>
+        </form>
+    </div>
+    <div class="/">
+        <form action="/">
+            <button type="submit">Home</button>
+        </form>
+    </div>
+</div>
+<div class="box"> 
+{% for row in products %}
+<div class="panel">
+    <div class="text_title">
+        {{row[0]}}
+    </div>
+    <div class="text">
+        {{row[1]}}
+    </div>
+    <div class="text_price">
+        {{row[2]}}
+    </div>
+    <img src="/static/images/{{row[3]}}"/>
+</div>
+{% endfor %}
+</div>
+<div class="box">
+<p>
+There are {{products|length}} 
+</p>
+{% if products|length >5 %}
+<p>Good!!</p>
+{% else %}
+<p>Bad!</p>
+{% endif %}
+</div>
+</body>

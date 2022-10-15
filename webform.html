@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        .navibar{
+            width:100%;
+            background-color: mediumspringgreen;
+        }
+        form{
+            background-color:cornsilk;
+            width: 30%;
+            margin: auto;
+            padding: 5px;
+            border: black 1px solid;
+        }
+        .row{
+            display: flex;
+            padding:0.5em;
+            justify-content: space-evenly;
+        }
+        label{
+            color:blueviolet;
+            width: 30%;
+        }
+        input{
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navibar">
+        <div class="redirect">
+            <form action="/">
+                <button type="submit">Home</button>
+            </form>
+        </div>
+    </div>
+
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <label> Product </label><input name="product" type="text"/>
+    </div>
+    <div class="row">
+        <label> Desc </label><input name="description" type="text"/>
+    </div>
+    <div class="row">
+        <label> Price </label><input name="price" type="text"/>
+    </div>
+    <div class="row">
+        <label> Image </label><input name="image" type="file"/>
+    </div>
+    <div class="row">
+        <button type="submit">Save</button>
+        <button type="reset"> Cancel</button>
+    </div>
+    </form>
+</body>
+</html>
